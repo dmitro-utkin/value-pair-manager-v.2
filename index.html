@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name/Value Pair Manager v.2</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <img src="images/icons/database.svg" alt="Database" class="icon">
+        <h1>Name/Value Pair Manager</h1>
+      </div>
+      
+      <form id="input-form" class="input-form">
+        <div class="input-wrapper">
+          <input type="text" id="pair-input" placeholder="Enter name = value">
+          <button type="submit">Add</button>
+        </div>
+        <div id="error-message" class="error-message hidden"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="actions">
+        <button id="sort-name" class="btn">
+          <img src="images/icons/sort.svg" alt="Sort" class="icon">
+          Sort by Name
+        </button>
+        <button id="sort-value" class="btn">
+          <img src="images/icons/sort.svg" alt="Sort" class="icon">
+          Sort by Value
+        </button>
+        <button id="delete-selected" class="btn btn-danger" disabled>
+          <img src="images/icons/trash.svg" alt="Delete" class="icon">
+          Delete Selected
+        </button>
+        <button id="show-xml" class="btn">
+          <img src="images/icons/code.svg" alt="Code" class="icon">
+          Show as XML
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table id="pairs-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>XML View</h2>
+        <button id="close-modal" class="close-btn">
+          <img src="images/icons/close.svg" alt="Close" class="icon">
+        </button>
+      </div>
+      <pre id="xml-content"></pre>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
